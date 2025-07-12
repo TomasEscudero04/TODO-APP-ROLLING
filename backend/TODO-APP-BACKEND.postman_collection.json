@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "7005d958-8061-4de6-8f67-9e0400ed5c9c",
+		"name": "TODO-APP-BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44553371",
+		"_collection_link": "https://tomasescudero.postman.co/workspace/Tomas-Escudero's-Workspace~a2831922-fe39-4bea-8051-eb7940b86c9f/collection/44553371-7005d958-8061-4de6-8f67-9e0400ed5c9c?action=share&source=collection_link&creator=44553371"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"TomyEscu\",\r\n    \"email\" : \"tomyesq0@gmail.com\",\r\n    \"password\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestPasswordReset",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTU5OTJhMjllMmNkNzNjMWZkNDE3MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXlAZ21haWwuY29tIiwiaWF0IjoxNzUwNzE4NTIxLCJleHAiOjE3NTA3MjIxMjF9.rPxS87sCJDGIyBIUsjt99tSprUfZaPtGAgj6AdpDh0c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"tomyesq04@gmail.com\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/request-password-reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"request-password-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"tomyesq04@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyToken",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/verify-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"verify-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyEmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/v1/verify-email?token=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profilePicture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXllc3EwNEBnbWFpbC5jb20iLCJpYXQiOjE3NTEwNTA1NjMsImV4cCI6MTc1MTA1NDE2M30.gjK9xlFJxE5yTtTcqDGL_K49xWd8Qw9S-7NnVkXxVcc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "iconProfile",
+									"type": "file",
+									"src": "/C:/Users/tomye/Downloads/DSCN4083.JPG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/upload-profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"upload-profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTU5OTJhMjllMmNkNzNjMWZkNDE3MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXlAZ21haWwuY29tIiwiaWF0IjoxNzUwNzE4NTIxLCJleHAiOjE3NTA3MjIxMjF9.rPxS87sCJDGIyBIUsjt99tSprUfZaPtGAgj6AdpDh0c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/v1/profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInB1cnBvc2UiOiJwYXNzd29yZC1yZXNldCIsImlhdCI6MTc1MTA1MjM4MiwiZXhwIjoxNzUxMDU1OTgyfQ.kqvmDYiWVIHllAtR7NCS2EV3InyIPjbiPa8osRpzA9E",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"reset-password",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInB1cnBvc2UiOiJwYXNzd29yZC1yZXNldCIsImlhdCI6MTc1MTA1MjM4MiwiZXhwIjoxNzUxMDU1OTgyfQ.kqvmDYiWVIHllAtR7NCS2EV3InyIPjbiPa8osRpzA9E"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "createTaskWithFiles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXllc3EwNEBnbWFpbC5jb20iLCJpYXQiOjE3NTEzODI1MjYsImV4cCI6MTc1MTM4NjEyNn0.y8ALavTWCQpNFleyh1C2Ksv_QuuKvvGC2DODkRuYWRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "prueba de subida de tareas con files 2",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/tomye/Downloads/image.png",
+										"/C:/Users/tomye/Downloads/DSCN4083.JPG"
+									]
+								},
+								{
+									"key": "description",
+									"value": "descripcion de prueba para la tarea",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneTask",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/tasks/686317a524f3c3eb6bf4c1d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"686317a524f3c3eb6bf4c1d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXllc3EwNEBnbWFpbC5jb20iLCJpYXQiOjE3NTEzODI1MjYsImV4cCI6MTc1MTM4NjEyNn0.y8ALavTWCQpNFleyh1C2Ksv_QuuKvvGC2DODkRuYWRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "tarea con archivos actualizada 2.0",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "prueba de actualizacion de archivos con imagen nueva FINAL",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/tomye/Downloads/Diseño sin título (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/v1/tasks/6863fcc03c29afe267fe3914",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"6863fcc03c29afe267fe3914"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTlkOTNkY2NhMzQzMjkwZGI4ODY0MCIsInVzZXJuYW1lIjoiVG9teXkiLCJlbWFpbCI6InRvbXllc3EwNEBnbWFpbC5jb20iLCJpYXQiOjE3NTEzODI1MjYsImV4cCI6MTc1MTM4NjEyNn0.y8ALavTWCQpNFleyh1C2Ksv_QuuKvvGC2DODkRuYWRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/v1/tasks/6863fcc03c29afe267fe3914",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"6863fcc03c29afe267fe3914"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
