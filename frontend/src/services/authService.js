@@ -1,4 +1,4 @@
-const API = "http://localhost:3003/api/v1/auth";
+const API = "http://localhost:3003/api/v1";
 const getToken = () => localStorage.getItem("token");
 import axios from "axios";
 

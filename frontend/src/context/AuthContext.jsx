@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, use } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import * as authService from "../services/authService";
 
 
@@ -19,6 +19,7 @@ const register = async (userData) => {
 const login = async (credentials) => {
     const {token, user} = await authService.login(credentials);
     console.log("Login OK - Token:", token);
+    localStorage.setItem('token', token);
     setUser(user);
     await getProfile(); // carga la imagen y el perfil actualizados
 }
