@@ -49,7 +49,7 @@ export const requestPasswordReset = async (req, res) => {
 
         // 6- enviar la respuesta al cliente 
         res.status(200).json({
-            message: 'Password reset instructions sent to your email.',
+            message: 'Password reset instructions sent. Check your email.',
             expiresIn: '1 hour',
         });
 
