@@ -148,10 +148,10 @@ export const profile = async (req, res) => {
 
 export const verifyToken = async (req, res) => {
   try {
-
+    const authHeaders = req.headers.authorization;
     let token;
-    if (!token && req.cookies?.token) {
-      token = req.cookies.token;
+    if (authHeaders && authHeaders.startsWith("Bearer ")) {
+      token = authHeaders.split(" ")[1];
     } else {
       return res.status(401).json({ message: "No token provided" });
     }
@@ -175,32 +175,31 @@ export const verifyToken = async (req, res) => {
 };
 
 export const verifyEmail = async (req, res) => {
-    try {
-        const {token} = req.query;
+  try {
+    const { token } = req.query;
 
-        const user = await User.findOne({verificationToken:token});
+    const user = await User.findOne({ verificationToken: token });
 
-        if (!user) {
-            return res.status(400).json({message: "Token not valid or expired"});
-        }
-
-        user.isVerified = true; //Actualizo el estado de verificación del usuario
-        user.verificationToken = undefined; //Elimino el token de verificación para que no se pueda usar nuevamente
-        await user.save();
-
-        return res.status(200).json({
-            success: true,
-            message: "Email verified successfully!",
-            user: {
-                id: user._id,
-                username: user.username,
-                email: user.email,
-                isVerified: user.isVerified
-            },
-        });
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({ message: error.message });
-        
+    if (!user) {
+      return res.status(400).json({ message: "Token not valid or expired" });
     }
-}
+
+    user.isVerified = true; //Actualizo el estado de verificación del usuario
+    user.verificationToken = undefined; //Elimino el token de verificación para que no se pueda usar nuevamente
+    await user.save();
+
+    return res.status(200).json({
+      success: true,
+      message: "Email verified successfully!",
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        isVerified: user.isVerified,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message });
+  }
+};
