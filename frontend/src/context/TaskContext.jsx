@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect,} from 'react';
 import * as taskService from '../services/taskService';
 
-export const TasksContext = createContext();
+const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
@@ -18,7 +18,7 @@ export const TasksProvider = ({ children }) => {
     }
   };
 
-  const createTask = async (taskData) => {
+  const addTask = async (taskData) => {
     const newTask = await taskService.createTask(taskData);
     setTasks(prev => [...prev, newTask]);
     return newTask;
@@ -46,7 +46,7 @@ export const TasksProvider = ({ children }) => {
         fetchTasks,
         tasks,
         loadingTask,
-        createTask,
+        addTask,
         deleteTask,
         updateTask 
         }}>

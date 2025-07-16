@@ -1,4 +1,4 @@
-const API = "http://localhost:3003/api/v1/auth";
+const API = "http://localhost:3003/api/v1";
 const getToken = () => localStorage.getItem("token");
 import axios from "axios";
 
@@ -8,8 +8,8 @@ const config = {
         },
 };
 
-export const createTask = async (FormData) => {
-    const res = await axios.post(`${API}/tasks`, FormData, {
+export const createTask = async (formData) => {
+    const res = await axios.post(`${API}/tasks`, formData, {
             headers: {
                 Authorization: `Bearer ${getToken()}`,
                 "Content-Type": "multipart/form-data",
