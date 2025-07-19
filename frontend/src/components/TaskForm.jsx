@@ -28,7 +28,7 @@ function TaskForm() {
       setDescription('');
       setDueDate('');
       setFiles([]);
-      toast.success('✅ Task added successfully!');
+      toast.success('Task added successfully!');
     } catch (error) {
       console.log('Error adding task: ', error.response?.data?.message || error.message);
       const data = error.response?.data;
